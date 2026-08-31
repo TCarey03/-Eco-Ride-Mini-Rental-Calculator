@@ -4,29 +4,40 @@ void main() {
   const double baseRate = 5.0;
   const double scooterServiceFee = 2.0;
 
-  print("Welcome to Eco-Ride!");
+  String continueChoice = "y";
 
-  print("Choose your vehicle:");
-  print("1. Bike");
-  print("2. Scooter");
+  while (continueChoice == "y") {
+    print("\nWelcome to Eco-Ride!");
 
-  int choice = int.parse(stdin.readLineSync()!);
+    print("Choose your vehicle:");
+    print("1. Bike");
+    print("2. Scooter");
 
-  print("Enter your travel distance:");
-  int distance = int.parse(stdin.readLineSync()!);
+    int choice = int.parse(stdin.readLineSync()!);
 
-  double cost;
+    print("Enter your travel distance:");
+    int distance = int.parse(stdin.readLineSync()!);
 
-  if (choice == 1) {
-    cost = distance * baseRate;
-    print("You selected a Bike.");
-  } else if (choice == 2) {
-    cost = (distance * baseRate) + scooterServiceFee;
-    print("You selected a Scooter.");
-  } else {
-    print("Invalid vehicle choice.");
-    return;
+    double cost;
+
+    if (choice == 1) {
+      cost = distance * baseRate;
+      print("You selected a Bike.");
+    } else if (choice == 2) {
+      cost = (distance * baseRate) + scooterServiceFee;
+      print("You selected a Scooter.");
+    } else {
+      print("Invalid vehicle choice.");
+      return;
+    }
+
+    print("Your rental cost is: \$${cost.toStringAsFixed(2)}");
+
+    print("\nWould you like to make another calculation?");
+    print("Enter y to continue or anything else to exit.");
+
+    continueChoice = stdin.readLineSync()!.toLowerCase();
   }
 
-  print("Your rental cost is: \$${cost.toStringAsFixed(2)}");
+  print("Thank you for using Eco-Ride!");
 }
