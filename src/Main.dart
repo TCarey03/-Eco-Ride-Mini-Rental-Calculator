@@ -7,31 +7,35 @@ void main() {
   String continueChoice = "y";
 
   while (continueChoice == "y") {
-    print("\nWelcome to Eco-Ride!");
+    try {
+      print("\nWelcome to Eco-Ride!");
 
-    print("Choose your vehicle:");
-    print("1. Bike");
-    print("2. Scooter");
+      print("Choose your vehicle:");
+      print("1. Bike");
+      print("2. Scooter");
 
-    int choice = int.parse(stdin.readLineSync()!);
+      int choice = int.parse(stdin.readLineSync()!);
 
-    print("Enter your travel distance:");
-    int distance = int.parse(stdin.readLineSync()!);
+      print("Enter your travel distance:");
+      int distance = int.parse(stdin.readLineSync()!);
 
-    double cost;
+      double cost;
 
-    if (choice == 1) {
-      cost = distance * baseRate;
-      print("You selected a Bike.");
-    } else if (choice == 2) {
-      cost = (distance * baseRate) + scooterServiceFee;
-      print("You selected a Scooter.");
-    } else {
-      print("Invalid vehicle choice.");
-      return;
+      if (choice == 1) {
+        cost = distance * baseRate;
+        print("You selected a Bike.");
+      } else if (choice == 2) {
+        cost = (distance * baseRate) + scooterServiceFee;
+        print("You selected a Scooter.");
+      } else {
+        print("Invalid vehicle choice. Please enter 1 or 2.");
+        continue;
+      }
+
+      print("Your rental cost is: \$${cost.toStringAsFixed(2)}");
+    } catch (e) {
+      print("Invalid input. Please enter numbers only.");
     }
-
-    print("Your rental cost is: \$${cost.toStringAsFixed(2)}");
 
     print("\nWould you like to make another calculation?");
     print("Enter y to continue or anything else to exit.");
