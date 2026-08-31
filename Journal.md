@@ -29,3 +29,16 @@ I chose to use a while loop because I wanted the program to continue running whi
 After each rental calculation, the program asks the user if they want to continue. If they enter y, the while loop runs again. If they enter anything other than y, the condition becomes false and the program exits the loop.
 
 I chose a while loop because the condition clearly describes when the program should continue running. It also matches the requirement that anything other than the continue key should cause the program to exit.
+
+---------------------------------------------------------
+
+Phase 4: Error Handling
+Where did you place your try/catch block, and what specific errors were you trying to catch?
+
+I placed the try/catch block around the main rental calculation inside the while loop. I put the code that converts the user's vehicle choice and travel distance from Strings into integers inside the try block.
+
+The main error I was trying to catch was invalid input when using int.parse(). For example, if the user enters ten instead of 10, Dart cannot convert that String into an integer and would normally cause the program to crash.
+
+The catch block displays a friendly error message telling the user to enter numbers instead. The program then gives the user the option to perform another calculation or exit.
+
+I placed the try/catch inside the while loop so that an input error does not end the entire program immediately. This allows the program to continue running if the user wants to try another calculation.
