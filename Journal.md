@@ -18,3 +18,14 @@ I used an if/else if/else structure to handle the user's vehicle choice. If the 
 I also included an else statement to handle an invalid vehicle choice. If the user enters something other than 1 or 2, the program displays an error message and exits.
 
 I chose this structure because there are three possible outcomes: the user chooses a Bike, the user chooses a Scooter, or the user enters an invalid choice.
+
+--------------------------------------------------------
+
+Phase 3: Continuous Loop & Exit Option
+Which type of loop did you choose (while or do-while), and why?
+
+I chose to use a while loop because I wanted the program to continue running while the user enters y to make another calculation. I created a variable called continueChoice and initially set it to "y" so the program would run at least once.
+
+After each rental calculation, the program asks the user if they want to continue. If they enter y, the while loop runs again. If they enter anything other than y, the condition becomes false and the program exits the loop.
+
+I chose a while loop because the condition clearly describes when the program should continue running. It also matches the requirement that anything other than the continue key should cause the program to exit.
